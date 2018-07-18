@@ -1,6 +1,6 @@
 #!/bin/bash
-USERNAME=
-PASSWORD=
+#USERNAME=
+#PASSWORD=
 
 git clone https://$USERNAME:$PASSWORD@github.com/viosoft-corp/dronava.git
 cd dronava/components/openairinterface5g/cmake_targets/

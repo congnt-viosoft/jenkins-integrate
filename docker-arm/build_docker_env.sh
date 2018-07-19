@@ -12,4 +12,7 @@ echo 'nameserver 8.8.8.8' > arm-chroot/etc/resolv.conf
 rm arm-chroot/etc/init/cloud-*
 
 cp /root/make_inside.sh arm-chroot/.
+cp /root/id_rsa_dronava* arm-chroot/.
+chroot arm-chroot/ qemu-arm-static /bin/eval "$(ssh-agent -s)"
+chroot arm-chroot/ qemu-arm-static /bin/ssh-add ./id_rsa_dronava
 chroot arm-chroot/ qemu-arm-static /bin/bash ./make_inside.sh

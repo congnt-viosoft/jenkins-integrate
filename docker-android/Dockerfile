@@ -8,9 +8,9 @@ RUN mkdir /root/android-sdk/
 WORKDIR /root/android-sdk/
 RUN wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
 RUN unzip sdk-tools-linux-3859397.zip
-RUN printf 'y\n' | tools/bin/sdkmanager --update
+RUN yes | tools/bin/sdkmanager --update
 RUN tools/bin/sdkmanager "platforms;android-23" "build-tools;23.0.3" "ndk-bundle" "cmake;3.6.4111459"
-RUN printf 'y\ny\ny\ny\n' | tools/bin/sdkmanager --licenses
+RUN yes | tools/bin/sdkmanager --licenses
 ENV ANDROID_HOME=/root/android-sdk
 ENV ANDROID_NDK_HOME=/root/android-sdk/ndk-bundle
 RUN echo export ANDROID_HOME=/root/android-sdk >> /root/.bashrc

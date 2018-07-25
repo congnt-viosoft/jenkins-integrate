@@ -4,6 +4,7 @@ RUN add-apt-repository ppa:openjdk-r/ppa
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-8-jdk openjdk-8-jre wget build-essential git unzip
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/
 RUN echo export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/ >> /.bashrc
+ADD id_rsa_fidoclient* /
 RUN mkdir /android-sdk/
 WORKDIR /android-sdk/
 RUN wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip

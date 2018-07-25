@@ -1,5 +1,4 @@
-FROM ubuntu:16.04
-RUN apt-get update &&  DEBIAN_FRONTEND=noninteractive apt-get install qemu qemu-user-static qemu-system-arm vim build-essential git wget sudo -y;
+FROM shark.viosoft.com/dronava/oaisim_ue_toolchain:1
 USER root
 ADD id_rsa_dronava* /
 RUN eval "$(ssh-agent -s)" && ssh-add /id_rsa_dronava && \

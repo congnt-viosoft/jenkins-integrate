@@ -1,4 +1,4 @@
-FROM shark.viosoft.com/dronava/oaisim_ue_toolchain:1
+FROM oaisim_ue_toolchain
 RUN apt-get update &&  DEBIAN_FRONTEND=noninteractive apt-get install vim build-essential git wget sudo -y;
 USER root
 ADD id_rsa_dronava* /

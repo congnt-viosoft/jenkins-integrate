@@ -1,4 +1,4 @@
-FROM enb_wrt
+FROM enb_arm_linksys
 RUN apt-get update && apt-get install -y --no-install-recommends \
     autoconf \
     automake \

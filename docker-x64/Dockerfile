@@ -44,10 +44,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     software-properties-common \
     vim \
     gdb \
+    openssh-client \
     && apt-get clean && rm -rf /var/lib/apt/lists/* \
     && echo "[http]\n\tsslVerify = true\n\tslCAinfo = /etc/ssl/certs/ca-certificates.crt\n" >> ~/.gitconfig
-
-RUN apt-get install -y openssh-client
 
 ADD asn1c/ /tmp/asn1c/
 RUN cd /tmp/asn1c \

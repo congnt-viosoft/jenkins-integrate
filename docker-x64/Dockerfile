@@ -47,7 +47,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean && rm -rf /var/lib/apt/lists/* \
     && echo "[http]\n\tsslVerify = true\n\tslCAinfo = /etc/ssl/certs/ca-certificates.crt\n" >> ~/.gitconfig
 
-COPY asn1c/ /tmp/asn1c/
+ADD asn1c/ /tmp/asn1c/
 RUN cd /tmp/asn1c \
     && ./configure --prefix=/usr/local \
     && make -j`nproc` \
